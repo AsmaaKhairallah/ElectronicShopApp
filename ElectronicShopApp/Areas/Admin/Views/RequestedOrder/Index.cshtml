@@ -1,0 +1,60 @@
+@using ElectronicShopApp.Models;
+@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "Customer Orders ";
+}
+
+<br /><br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-info">@ViewData["Title"]</h2>
+    </div>
+   
+</div>
+<br />
+<div>
+    <table class="table table-striped border">
+        <tr class="table-info">
+            <th>
+                @Html.DisplayNameFor(c => c.OrderNo)
+            </th>
+            <th>
+             @Html.DisplayNameFor(c => c.Price)
+            </th>
+
+
+             <th>
+             @Html.DisplayNameFor(c => c.Name)
+            </th> 
+            <th>
+             @Html.DisplayNameFor(c => c.Email)
+            </th>
+
+             <th>
+             @Html.DisplayNameFor(c => c.Address)
+            </th>
+            
+             <th>
+             @Html.DisplayNameFor(c => c.PhoneNo)
+            </th>
+             <th>
+             @Html.DisplayNameFor(c => c.OrderDate)
+            </th>
+           
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OrderNo</td>
+                    <td>@item.Price</td>    
+                    <td>@item.Name</td>  
+                    <td>@item.Email</td>  
+                    <td>@item.Address</td>   
+                    <td>@item.PhoneNo</td>   
+                    <td>@item.OrderDate</td>
+          
+            </tr>
+        }
+    </table>
+</div>
+
